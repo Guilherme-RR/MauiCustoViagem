@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiCustoViagem.Views.ListaPedagio"
+             Title="Lista dos Pedágios">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Selecione para Remover" FontSize="Title" HorizontalTextAlignment="Center"/>
+
+            <Label x:Name="lbl_msg_lista_vazia"
+                   Text="Nenhum pedágio adicionado ainda :( "
+                   IsVisible="false" />
+
+            <ListView x:Name="lst_lista_pedagios"
+                      Footer=""
+                      BackgroundColor="#ffffff"
+                      SeparatorVisibility="Default">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Remover" Clicked="MenuItem_Clicked"></MenuItem>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
