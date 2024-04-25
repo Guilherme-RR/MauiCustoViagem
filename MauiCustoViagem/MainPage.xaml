@@ -1,108 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             Title="Maui Custo Viagem"
-             BackgroundColor="#000"
              x:Class="MauiCustoViagem.MainPage">
 
-    <Grid RowSpacing="10" ColumnSpacing="10" Padding="5" BackgroundColor="#EEE">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Origem: "/>
+            <Entry x:Name="txt_origem"/>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+            <Label Text="Destino" />
+            <Entry BindingContext="destino" x:Name="txt_destino"/>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <Label Text="Rendimento"/>
+            <Entry BindingContext="rendimento" x:Name="txt_rendimento"/>
 
-        </Grid.RowDefinitions>
+            <Label Text="Combustível" />
+            <Entry BindingContext="valor_combustivel" x:Name="txt_combustivel"/>
 
-        <Label Text="Origem: "
-               Grid.Row="1" Grid.Column="0"
-               Style="{StaticResource LabelRotulo}"/>
-        
-        <Label Text="Destino:"
-               Grid.Row="2" Grid.Column="0"
-               Style="{StaticResource LabelRotulo}"/>
-
-        <Entry x:Name="etyOrigem" Placeholder="Nome da Cidade"
-               Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Entry x:Name="etyDestino" Placeholder="Nome do Cidade"
-               Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2"
-               Keyboard="Text"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Label Text="Consumo Carro"
-               Grid.Row="3" Grid.ColumnSpan="3"
-               HorizontalTextAlignment="Center"
-               Style="{StaticResource Título}"/>
-
-        <Label Text="Distância:"
-               Grid.Row="4" Grid.Column="0"
-               Style="{StaticResource LabelRotulo}"/>
-
-        <Label x:Name="lblConsumo" Text="Consumo:"
-               Grid.Row="5" Grid.Column="0"
-               Style="{StaticResource LabelRotulo}"/>
-
-        <Label x:Name="lblValorC" Text="Valor do Combustível:"
-               Grid.Row="6" Grid.Column="0"
-               Style="{StaticResource LabelRotulo}"/>
-
-        <Entry x:Name="etyDistancia" Placeholder="Km"
-               Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Entry x:Name="etyConsumo" Placeholder="km/1"
-               Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Entry x:Name="etyValorC" Placeholder="R$ 0.0"
-               Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Label x:Name="lblTitulo3" Text="Pedágio"
-               Grid.Row="7" Grid.ColumnSpan="3"
-               HorizontalTextAlignment="Center"
-               VerticalOptions="CenterAndExpand"
-               Style="{StaticResource Título}"/>
-
-        <Label Text="Valor:"
-               Grid.Row="8" Grid.Column="0" Grid.RowSpan="2"
-               Style="{StaticResource LabelRotulo}"/>
-
-        <Entry x:Name="etyValorP" Placeholder="R$ 0,0"
-               Grid.Row="8" Grid.Column="1" Grid.RowSpan="2"
-               Style="{StaticResource TextEntrada}"/>
-
-        <Button x:Name="btnPedagio" Text="Add" Grid.Row="8" Grid.Column="2" Clicked="btnPedagio_Clicked"/>
-
-        <Button Text="Lista"
-                Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3"
-                Clicked="Button_Clicked"/>
-
-        <Button Text="Calcular"
-                Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3"
-                Clicked="Button_Clicked_1"/>
-
-        <Button Text="Limpar"
-                Grid.Row="10" Grid.Column="2"
-                Clicked="Button_Clicked_2"/>
-    </Grid>
-
+            <Button Margin="5" x:Name="btn_criarPedagio" Text="Adicionar pedágio" Clicked="btn_criarPedagio_Clicked"/>
+            <Button Margin="5" x:Name="btn_ListaPedagio" Text="Lista de Pedágio" Clicked="btn_ListaPedagio_Clicked"/>
+            <Button Margin="5" x:Name="btn_calcular" Text="Calcular" Clicked="btn_calcular_Clicked"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

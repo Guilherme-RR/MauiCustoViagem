@@ -1,37 +1,14 @@
 ﻿<?xml version = "1.0" encoding = "UTF-8" ?>
 <Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:MauiCustoViagem"
              x:Class="MauiCustoViagem.App">
     <Application.Resources>
         <ResourceDictionary>
-            <Style x:Key="plainButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#eee"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="20"/>
-            </Style>
-            
-            <Style x:Key="Título" TargetType="Label">
-                <Setter Property="BackgroundColor" Value="#3F51B5"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="FontSize" Value="30"/>
-            </Style>
-
-            <Style x:Key="LabelRotulo" TargetType="Label">
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
-            </Style>
-
-            <Style x:Key="TextEntrada" TargetType="Entry">
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="HorizontalTextAlignment" Value="Start"/>
-                <Setter Property="VerticalOptions" Value="StartAndExpand"/>
-            </Style>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

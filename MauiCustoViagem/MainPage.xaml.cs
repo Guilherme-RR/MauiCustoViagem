@@ -9,29 +9,23 @@
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void btn_criarPedagio_Clicked(object sender, EventArgs e)
         {
-            
+            Navigation.PushAsync(new Views.AddPedagio());
         }
 
-        private void btnPedagio_Clicked(object sender, EventArgs e)
+        private void btn_ListaPedagio_Clicked(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new Views.ListaPedagio());
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void btn_calcular_Clicked(object sender, EventArgs e)
         {
-
-        }
-
-        private void Button_Clicked_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Button_Clicked_2(object sender, EventArgs e)
-        {
-
+            if (txt_origem.Text == null)
+            {
+                await DisplayAlert("Erro", "Preencha o lugar de origem", "Ok");
+                return;
+            }
         }
     }
 
